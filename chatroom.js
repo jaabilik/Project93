@@ -14,7 +14,7 @@ var firebaseConfig = {
 document.getElementById("user_name").innerHTML = "Welcome to Kwitter, " + user_name + "!";
 function addRoom() {
     room_name = document.getElementById("room_name").value;
-    firebase.database().ref("/").child(room_name)({
+    firebase.database().ref("/").child(room_name).update({
         purpose:"adding room name"
     });
     localStorage.setItem("room_name", room_name);
