@@ -1,0 +1,40 @@
+<html> 
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="chatroom.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<title> Let's Chat.... meow </title>
+    </head>
+    
+    <body>
+        <div class="container">
+            <button id="logout" onclick="logout();" class="glyphicon glyphicon-log-out btn btn-danger"> Log out </button>
+            <center>
+                <h1 class="header">
+                    Let's Chat!
+                    <sup>
+                        <img class="logo" src="data:image/png;base64,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">
+                    </sup>
+                </h1>
+                <h3 id="user_name" class="color_white"></h3>
+
+                <div class="form-group input_div_room_page">
+                    <label>Add Room: </label>
+                    <input type="text" id="room_name" class="form-control" placeholder="Room name">
+                </div>
+
+                <button onclick="addRoom();" class="btn btn info"> Add a Room </button>
+                <h3 class="color_white"> Trending Rooms! </h3>
+                <div id="output"></div>
+            </center>
+        </div>
+        <script src="chatroom.js"></script>
+    </body>
+</html>
