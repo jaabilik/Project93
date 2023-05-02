@@ -1,14 +1,15 @@
+
 body
 {
-    font-family: 'Shadows Into Light', cursive;
-background-image: url(https://i.pinimg.com/564x/61/a1/2a/61a12a2eddf8af2e0a7a00f206e91348.jpg);
-background-position: center; 
-  background-repeat: no-repeat;
-  background-size: cover; 
+background-image: linear-gradient(to right top, #a9d6e5, #61a5c2, #2a6f97, #013a63, #012a4a);
 height: 100%;
   margin: 0;
+
 }
 
+h2, h3, h4, h5, h6, label {
+	font-family: 'Share Tech', sans-serif;
+}
 .header
 {
 	color: white; 
@@ -24,11 +25,11 @@ height: 100%;
 
 .login_div
 {
-	background: rgba(191, 237, 154, 0.8);
+	background: rgba(255,255,255,0.8);
     float: none;
 	border-radius: 15px;
 	width:50%;
-	box-shadow: 10px 10px 5px #0226079d;
+	box-shadow: 10px 10px 5px #0217269d;
 }
 
 .logo
@@ -110,10 +111,12 @@ height: 100%;
 {
 	padding-left:5px;color:grey;
 }
-h1 {
-    font-family: 'Great Vibes', cursive;
-}
 
-h3{
-	font-family: 'Shadows Into Light', cursive;
-}
+#output {
+	text-align: left;
+	margin-bottom: 70px;
+	}
+
+	h1 {
+		font-family: 'Bruno Ace', cursive;
+	}
